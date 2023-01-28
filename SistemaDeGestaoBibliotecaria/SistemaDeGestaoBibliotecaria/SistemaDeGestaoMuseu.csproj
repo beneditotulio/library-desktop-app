@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{899A4A42-1596-4C72-AF9D-3472C02F3C77}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SistemaDeGestaoBibliotecaria</RootNamespace>
+    <AssemblyName>SistemaDeGestaoBibliotecaria</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conexao\Conectando.cs" />
+    <Compile Include="Controladores\ConroladorUtilizador.cs" />
+    <Compile Include="Controladores\ControladorEstadoCivil.cs" />
+    <Compile Include="Controladores\ControladorTipoDoc.cs" />
+    <Compile Include="Controladores\ControladorProfissao.cs" />
+    <Compile Include="Controladores\ControladorAutor.cs" />
+    <Compile Include="Controladores\ControladorBR.cs" />
+    <Compile Include="Controladores\ControladorEmprestimo.cs" />
+    <Compile Include="Controladores\ControladorFuncionario.cs" />
+    <Compile Include="Controladores\ControladorLeitor.cs" />
+    <Compile Include="Controladores\ControladorLivro.cs" />
+    <Compile Include="Controladores\ControladorLocal.cs" />
+    <Compile Include="Controladores\ControladorMovimentos.cs" />
+    <Compile Include="Controladores\ControladorNomeSala.cs" />
+    <Compile Include="Controladores\ControladorOfertas.cs" />
+    <Compile Include="Controladores\Livro.cs" />
+    <Compile Include="frmConexaoBD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConexaoBD.Designer.cs">
+      <DependentUpon>frmConexaoBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listagens\DGVPrinter.cs" />
+    <Compile Include="Listagens\FrmAudioVisuais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listagens\FrmAudioVisuais.Designer.cs">
+      <DependentUpon>FrmAudioVisuais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listagens\FrmAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listagens\FrmAutor.Designer.cs">
+      <DependentUpon>FrmAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listagens\FrmBR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listagens\FrmBR.Designer.cs">
+      <DependentUpon>FrmBR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listagens\FrmEmprestimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listagens\FrmEmprestimo.Designer.cs">
+      <DependentUpon>FrmEmprestimo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listagens\FrmFOA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listagens\FrmFOA.Designer.cs">
+      <DependentUpon>FrmFOA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listagens\FrmFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listagens\FrmFuncionario.Designer.cs">
+      <DependentUpon>FrmFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listagens\FrmLeitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listagens\FrmLeitor.Designer.cs">
+      <DependentUpon>FrmLeitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listagens\FrmLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listagens\FrmLivro.Designer.cs">
+      <DependentUpon>FrmLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listagens\FrmMovimentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listagens\FrmMovimentos.Designer.cs">
+      <DependentUpon>FrmMovimentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listagens\FrmOfertas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listagens\FrmOfertas.Designer.cs">
+      <DependentUpon>FrmOfertas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Minhas Classes\VariaveisEstaticas.cs" />
+    <Compile Include="Modelos\AudioVisuais.cs" />
+    <Compile Include="Modelos\TipoDoc.cs" />
+    <Compile Include="Modelos\EstadoCivil.cs" />
+    <Compile Include="Modelos\Profissao.cs" />
+    <Compile Include="Modelos\BR.cs" />
+    <Compile Include="Modelos\Emprestimo.cs" />
+    <Compile Include="Modelos\Livro.cs" />
+    <Compile Include="Listagens\OleBOleDbCommand.cs" />
+    <Compile Include="Listagens\OlwBbCommand.cs" />
+    <Compile Include="Modelos\Autor.cs" />
+    <Compile Include="Modelos\Funcionario.cs" />
+    <Compile Include="Modelos\Leitor.cs" />
+    <Compile Include="Modelos\Local.cs" />
+    <Compile Include="Modelos\Movimentos.cs" />
+    <Compile Include="Modelos\NomeSala.cs" />
+    <Compile Include="Modelos\ObjectosArte.cs" />
+    <Compile Include="Modelos\Ofertas.cs" />
+    <Compile Include="Modelos\Utilizador.cs" />
+    <Compile Include="Telas\Definicoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Definicoes.Designer.cs">
+      <DependentUpon>Definicoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Telas\frmAudioVisuais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmAudioVisuais.Designer.cs">
+      <DependentUpon>frmAudioVisuais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmAutenticarDefinicoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmAutenticarDefinicoes.Designer.cs">
+      <DependentUpon>frmAutenticarDefinicoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmAutor.Designer.cs">
+      <DependentUpon>frmAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmBr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmBr.Designer.cs">
+      <DependentUpon>frmBr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmCadastro.Designer.cs">
+      <DependentUpon>frmCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\FrmEmprestimo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\FrmEmprestimo.Designer.cs">
+      <DependentUpon>FrmEmprestimo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmExposicoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmExposicoes.Designer.cs">
+      <DependentUpon>frmExposicoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmFotografiasOA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmFotografiasOA.Designer.cs">
+      <DependentUpon>frmFotografiasOA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmFuncionario.Designer.cs">
+      <DependentUpon>frmFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmLeitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmLeitor.Designer.cs">
+      <DependentUpon>frmLeitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmLivro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmLivro.Designer.cs">
+      <DependentUpon>frmLivro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmEstadoCivil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmEstadoCivil.Designer.cs">
+      <DependentUpon>frmEstadoCivil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmTipoDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmTipoDoc.Designer.cs">
+      <DependentUpon>frmTipoDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmProfissao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmProfissao.Designer.cs">
+      <DependentUpon>frmProfissao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmLocal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmLocal.Designer.cs">
+      <DependentUpon>frmLocal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmMenuAjuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmMenuAjuda.Designer.cs">
+      <DependentUpon>frmMenuAjuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmMenuInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmMenuInicio.Designer.cs">
+      <DependentUpon>frmMenuInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmMenuListagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmMenuListagem.Designer.cs">
+      <DependentUpon>frmMenuListagem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmMenuPrincipal.Designer.cs">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmMenuRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmMenuRelatorio.Designer.cs">
+      <DependentUpon>frmMenuRelatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmNomeSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmNomeSala.Designer.cs">
+      <DependentUpon>frmNomeSala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmOfertas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmOfertas.Designer.cs">
+      <DependentUpon>frmOfertas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmUtilizador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmUtilizador.Designer.cs">
+      <DependentUpon>frmUtilizador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmConexaoBD.resx">
+      <DependentUpon>frmConexaoBD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listagens\FrmAudioVisuais.resx">
+      <DependentUpon>FrmAudioVisuais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listagens\FrmAutor.resx">
+      <DependentUpon>FrmAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listagens\FrmBR.resx">
+      <DependentUpon>FrmBR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listagens\FrmEmprestimo.resx">
+      <DependentUpon>FrmEmprestimo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listagens\FrmFOA.resx">
+      <DependentUpon>FrmFOA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listagens\FrmFuncionario.resx">
+      <DependentUpon>FrmFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listagens\FrmLeitor.resx">
+      <DependentUpon>FrmLeitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listagens\FrmLivro.resx">
+      <DependentUpon>FrmLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listagens\FrmMovimentos.resx">
+      <DependentUpon>FrmMovimentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listagens\FrmOfertas.resx">
+      <DependentUpon>FrmOfertas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Definicoes.resx">
+      <DependentUpon>Definicoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Telas\frmAudioVisuais.resx">
+      <DependentUpon>frmAudioVisuais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmAutenticarDefinicoes.resx">
+      <DependentUpon>frmAutenticarDefinicoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmAutor.resx">
+      <DependentUpon>frmAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmBr.resx">
+      <DependentUpon>frmBr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmCadastro.resx">
+      <DependentUpon>frmCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\FrmEmprestimo.resx">
+      <DependentUpon>FrmEmprestimo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmExposicoes.resx">
+      <DependentUpon>frmExposicoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmFotografiasOA.resx">
+      <DependentUpon>frmFotografiasOA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmFuncionario.resx">
+      <DependentUpon>frmFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmLeitor.resx">
+      <DependentUpon>frmLeitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmLivro.resx">
+      <DependentUpon>frmLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmEstadoCivil.resx">
+      <DependentUpon>frmEstadoCivil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmTipoDoc.resx">
+      <DependentUpon>frmTipoDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmProfissao.resx">
+      <DependentUpon>frmProfissao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmLocal.resx">
+      <DependentUpon>frmLocal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmMenuAjuda.resx">
+      <DependentUpon>frmMenuAjuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmMenuInicio.resx">
+      <DependentUpon>frmMenuInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmMenuListagem.resx">
+      <DependentUpon>frmMenuListagem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmMenuPrincipal.resx">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmMenuRelatorio.resx">
+      <DependentUpon>frmMenuRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmNomeSala.resx">
+      <DependentUpon>frmNomeSala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmOfertas.resx">
+      <DependentUpon>frmOfertas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmUtilizador.resx">
+      <DependentUpon>frmUtilizador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\emblema.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ofertas1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\O.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exposicao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LIVRO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FOTOGRAFIAS E OBRAS DE ARTE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AUDIO VISUAL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OFERTA.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NOVO LOGO MPRM  ACRLICO + VINIL.pdf - Foxit Reader 08_10_2020 02_17_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Funcionario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Autor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transferir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NOVO LOGO MPRM  ACRLICO + VINIL.pdf - Foxit Reader 08_10_2020 02_17_031.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Museu da Presidencia Logo Official.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Location_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Location_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Create_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_104px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eye_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Biblioteca.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Biblioteca1.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
